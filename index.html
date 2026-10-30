@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MysticTube</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">▶ MysticTube</div>
+
+    <div class="search">
+        <input type="text" id="searchInput"
+        placeholder="Search videos...">
+        <button onclick="searchVideos()">⌕</button>
+    </div>
+
+    <button class="upload" onclick="showUpload()">
+        + Upload
+    </button>
+</header>
+
+<nav>
+    <button onclick="filterVideos('All')">All</button>
+    <button onclick="filterVideos('Gaming')">Gaming</button>
+    <button onclick="filterVideos('Music')">Music</button>
+    <button onclick="filterVideos('Entertainment')">Entertainment</button>
+    <button onclick="filterVideos('Sports')">Sports</button>
+</nav>
+
+<main>
+    <h2>Recommended videos</h2>
+    <div class="video-grid" id="videoGrid"></div>
+</main>
+
+<div id="uploadModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeUpload()">×</span>
+        <h2>Add a video</h2>
+
+        <input id="videoTitle" placeholder="Video title">
+        <input id="videoChannel" placeholder="Channel name">
+        <input id="videoThumbnail" placeholder="Thumbnail image URL">
+        <input id="videoURL" placeholder="Video URL (MP4 or YouTube embed URL)">
+
+        <select id="videoCategory">
+            <option>Gaming</option>
+            <option>Music</option>
+            <option>Entertainment</option>
+            <option>Sports</option>
+        </select>
+
+        <button onclick="addVideo()">Add Video</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
